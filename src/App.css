@@ -209,3 +209,7 @@ padding: 15px 20px;
   border: none;
   color: white;
 }
+
+.tab-item:hover {
+  color: #dc3545 !important;
+}

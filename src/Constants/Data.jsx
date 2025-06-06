@@ -126,3 +126,30 @@ export const educationData = [
     imageSrc: education1,
   },
 ];
+
+export const blogData = [
+  {
+    image: 'https://source.unsplash.com/400x300/?podcast,studio',
+    category: 'Application',
+    time: '5 min read',
+    title: 'Mobile app landing design & app maintain',
+  },
+  {
+    image: 'https://source.unsplash.com/400x300/?coding,react',
+    category: 'Development',
+    time: '8 min read',
+    title: 'React Hooks best practices in 2025',
+  },
+    {
+    image: 'https://source.unsplash.com/400x300/?podcast,studio',
+    category: 'Application',
+    time: '5 min read',
+    title: 'Mobile app landing design & app maintain',
+  },
+  {
+    image: 'https://source.unsplash.com/400x300/?coding,react',
+    category: 'Development',
+    time: '8 min read',
+    title: 'React Hooks best practices in 2025',
+  }
+];
