@@ -11,11 +11,11 @@ const ExperienceCard = ({ year, title, role, description, imageSrc }) => {
     >
       <div className="col-12 d-flex align-items-center p-4 shadow-box text-white rounded-4">
         {/* Image on the left */}
-        <div className="col-3">
+        <div className="col-3 card-img-container overflow-hidden">
           <img
             src={imageSrc}
             alt="App Screenshot"
-            className="img-fluid rounded-3 w-100"
+            className="img-fluid rounded-3 w-100 zoom-on-hover"
             style={{ maxWidth: "100%", maxHeight: "200px", backgroundColor: "#000" }}
           />
         </div>

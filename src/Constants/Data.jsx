@@ -127,7 +127,7 @@ export const educationData = [
   },
 ];
 
-export const blogData = [
+export const projectData = [
   {
     image: 'https://source.unsplash.com/400x300/?podcast,studio',
     category: 'Application',

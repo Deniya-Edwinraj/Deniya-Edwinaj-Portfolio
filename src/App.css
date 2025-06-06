@@ -210,6 +210,16 @@ padding: 15px 20px;
   color: white;
 }
 
+/* Tabs */
 .tab-item:hover {
   color: #dc3545 !important;
+}
+
+/* Zoom effects */
+.zoom-on-hover {
+  transition: transform 0.4s ease;
+}
+
+.card-img-container:hover .zoom-on-hover {
+  transform: scale(1.1);
 }
