@@ -64,19 +64,22 @@ export default function Home() {
       id: 1,
       name: "GitHub",
       icon: <FaGithub />,
-      url: "https://github.com/your-username",
+      bg: "bg-danger",
+      url: "https://github.com/Deniya-Edwinraj",
     },
     {
       id: 2,
       name: "LinkedIn",
       icon: <FaLinkedinIn />,
-      url: "https://www.linkedin.com/in/your-profile",
+      bg: "bg-danger",
+      url: "https://www.linkedin.com/in/deniya-edwinraj/",
     },
     {
       id: 3,
       name: "Medium",
       icon: <FaMedium />,
-      url: "https://medium.com/@your-profile",
+      bg: "bg-danger",
+      url: "https://medium.com/@deniyaedwinraj",
     },
   ];
 

@@ -50,25 +50,24 @@ export default function Contact() {
       name: "GitHub",
       icon: <FaGithub />,
       bg: "bg-danger",
-      url: "https://github.com/your-username",
+      url: "https://github.com/Deniya-Edwinraj",
     },
     {
       id: 2,
       name: "LinkedIn",
       icon: <FaLinkedinIn />,
       bg: "bg-danger",
-      url: "https://www.linkedin.com/in/your-profile",
+      url: "https://www.linkedin.com/in/deniya-edwinraj/",
     },
     {
       id: 3,
       name: "Medium",
       icon: <FaMedium />,
       bg: "bg-danger",
-      url: "https://medium.com/@your-profile",
+      url: "https://medium.com/@deniyaedwinraj",
     },
   ];
 
-  
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const [formData, setFormData] = useState({

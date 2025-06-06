@@ -132,7 +132,7 @@ export const educationData = [
   {
     year: "2007 - 2022",
     title: "Uki Technology School",
-    role: "Advanced Level in Pysical Science, Secondary Education, Primary Education",
+    role: "Advanced Level in Pysical Science stream, Secondary Education, Primary Education",
     imageSrc: education1,
   },
 ];

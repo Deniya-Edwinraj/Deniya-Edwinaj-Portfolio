@@ -234,6 +234,41 @@ export default function About() {
             ))}
           </div>
         </div>
+
+        {/* Right Column */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="col-md-12"
+        >
+          <div className="shadow-box rounded-4 mt-3 p-4 justify-content-center align-items-center text-center">
+            <h1 className="display-4 fw-bold">My Achievements</h1>
+
+            {/* Centered red line */}
+            <div
+              className="bg-danger mx-auto"
+              style={{ width: "60px", height: "4px" }}
+            ></div>
+
+            <h6 className="card-title text-light text-start mt-4">
+              Yaal Geeks Challenge (2023) participation - YGC Innovation
+              Festival
+            </h6>
+
+            <p className="fs-6 text-secondary text-start mt-2">
+              I took part in the Yaal Geek Challenge, representing my startup
+              idea. I participated in the Startup Essential Accelerator Program,
+              which was organised by Yaal IT Hub. I proposed that we sell
+              eco-friendly paper-made event decorations and decorative
+              ornaments. I advanced to the final round to present my final
+              presentation to 20 teams. This participation provides me many
+              benefits like One-to-One Mentoring, Continuous Monitoring, Seed
+              Funding, Networking Opportunities, Business Training, and
+              Showcasing Opportunities.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
