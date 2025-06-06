@@ -1,9 +1,13 @@
-import { FaGithub, FaLinkedinIn, FaMedium } from 'react-icons/fa';
-import { Mail, Phone, MapPin } from 'lucide-react'; 
+import { FaGithub, FaLinkedinIn, FaMedium } from "react-icons/fa";
+import { Mail, Phone, MapPin } from "lucide-react";
 import experience1 from "../assets/Images/4.png";
 import experience2 from "../assets/Images/5.png";
 import education1 from "../assets/Images/e1.jpeg";
 import education3 from "../assets/Images/e3.jpeg";
+import project1 from "../assets/Images/p1.png";
+import project2 from "../assets/Images/p2.png";
+import project3 from "../assets/Images/p3.png";
+
 import {
   FaLaptopCode,
   FaCode,
@@ -12,7 +16,7 @@ import {
   FaRocket,
   FaTools,
 } from "react-icons/fa";
-
+import { p } from "framer-motion/client";
 
 export const services = [
   {
@@ -60,10 +64,14 @@ export const services = [
 ];
 
 export const contactInfo = [
-    { label: "EMAIL", value: "deniyaedwinraj@gmail.com", icon: <Mail size={20}/> },
-    { label: "PHONE", value: "070 703 2334", icon: <Phone size={20}/> },
-    { label: "LOCATION", value: "Jaffna, Sri Lanka", icon: <MapPin size={20}/> },
-  ];
+  {
+    label: "EMAIL",
+    value: "deniyaedwinraj@gmail.com",
+    icon: <Mail size={20} />,
+  },
+  { label: "PHONE", value: "070 703 2334", icon: <Phone size={20} /> },
+  { label: "LOCATION", value: "Jaffna, Sri Lanka", icon: <MapPin size={20} /> },
+];
 
 export const icons = [
   {
@@ -94,14 +102,16 @@ export const experienceData = [
     year: "2024 November – Present",
     title: "ADADA DIGITAL PVT LTD",
     role: "Frontend Web Developer",
-    description: "Building and optimizing responsive web interfaces using modern frameworks, with a focus on performance, accessibility, and user experience.",
+    description:
+      "Building and optimizing responsive web interfaces using modern frameworks, with a focus on performance, accessibility, and user experience.",
     imageSrc: experience2,
   },
   {
     year: "2024 April – 2024 November",
     title: "Uki Technology School",
     role: "Intern Assistant Lecturer",
-    description: "Assisted in delivering coding bootcamps and mentoring students on web development fundamentals, project building, and industry best practices.",
+    description:
+      "Assisted in delivering coding bootcamps and mentoring students on web development fundamentals, project building, and industry best practices.",
     imageSrc: experience1,
   },
 ];
@@ -119,7 +129,7 @@ export const educationData = [
     role: "Full-stack Web Development.",
     imageSrc: experience1,
   },
-    {
+  {
     year: "2007 - 2022",
     title: "Uki Technology School",
     role: "Advanced Level in Pysical Science, Secondary Education, Primary Education",
@@ -129,27 +139,32 @@ export const educationData = [
 
 export const projectData = [
   {
-    image: 'https://source.unsplash.com/400x300/?podcast,studio',
-    category: 'Application',
-    time: '5 min read',
-    title: 'Mobile app landing design & app maintain',
+    image: project3,
+    category: "Full Stack",
+    title: "Mr.Bot AI Chatbot",
+    technology: "React js, Node js, MongoDB, Express, Nodemailer, Gemini API",
+    description:
+      "An AI-powered chatbot that interacts with users intelligently using the Gemini API. Ideal for customer support or education platforms, this chatbot offers smart responses, email integration, and conversation logging.",
+    url: "https://mrbot-frontend.vercel.app/",
   },
   {
-    image: 'https://source.unsplash.com/400x300/?coding,react',
-    category: 'Development',
-    time: '8 min read',
-    title: 'React Hooks best practices in 2025',
-  },
-    {
-    image: 'https://source.unsplash.com/400x300/?podcast,studio',
-    category: 'Application',
-    time: '5 min read',
-    title: 'Mobile app landing design & app maintain',
+    image: project1,
+    category: "Full Stack",
+    title: "MASK Ecommerce website",
+    technology:
+      "React js, Node js, MongoDB, Express, Cloudinary, Nodemailer, Multer",
+    description:
+      "A fully functional e-commerce platform where users can browse, search, and purchase products. Features include authentication, cart management, image uploads, and order handling with admin approval.",
+    url: "https://frontend-mask.vercel.app/",
   },
   {
-    image: 'https://source.unsplash.com/400x300/?coding,react',
-    category: 'Development',
-    time: '8 min read',
-    title: 'React Hooks best practices in 2025',
-  }
+    image: project2,
+    category: "Full Stack",
+    title: "MASK Ecommerce Admin",
+    technology:
+      "Vite js, Node js, MongoDB, Express, Cloudinary, Nodemailer, Multer",
+    description:
+      "An admin dashboard for managing the MASK Ecommerce platform. Admins can manage products, view orders, control inventory, and monitor user activities through a clean and responsive interface.",
+    url: "https://mask-admin.vercel.app/",
+  },
 ];

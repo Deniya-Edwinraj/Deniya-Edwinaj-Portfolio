@@ -211,7 +211,7 @@ padding: 15px 20px;
 }
 
 /* Tabs */
-.tab-item:hover {
+.tab-item:hover, .hover-text:hover{
   color: #dc3545 !important;
 }
 
@@ -222,4 +222,8 @@ padding: 15px 20px;
 
 .card-img-container:hover .zoom-on-hover {
   transform: scale(1.1);
+}
+
+.hover-text:hover{
+  color: #dc3545 !important;
 }

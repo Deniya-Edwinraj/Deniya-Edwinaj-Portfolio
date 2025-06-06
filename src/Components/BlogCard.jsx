@@ -3,7 +3,7 @@ import fallbackImage from "../assets/Images/6.png"; // make sure the path is cor
 
 const BlogCard = ({ image, category, time, title }) => {
   return (
-    <div className="card col-md-3 bg-dark text-light border-0 rounded-4 shadow p-3">
+    <div className="card col-md-3 bg-dark text-light border-0 rounded-4 shadow-box p-3">
       <div className="card-img-container overflow-hidden rounded-3">
         <img
           src={image}

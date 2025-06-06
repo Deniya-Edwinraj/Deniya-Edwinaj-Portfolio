@@ -9,7 +9,7 @@ export default function Project() {
       <div className="container text-center">
         <p className="text-danger">Visit my projects and keep your feedback</p>
         <h1 className="display-4 fw-bold">My Projects</h1>
-        <div className="mt-5 d-flex flex-wrap gap-4 justify-content-center">
+        <div className="mt-5 d-flex gap-4 justify-content-center">
           {projectData.map((card, index) => (
             <ProjectCard key={index} {...card} />
           ))}
