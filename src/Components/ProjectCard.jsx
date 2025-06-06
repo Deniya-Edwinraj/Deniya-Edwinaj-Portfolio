@@ -23,7 +23,7 @@ const ProjectCard = ({
           <span className="text-danger fw-bold">{category.toUpperCase()}</span>
           <span className="text-secondary d-flex gap-2">
             <i className="bi bi-github hover-text"></i>
-            <i className="bi bi-heart-fill text-danger"></i>
+            <i className="bi bi-heart-fill hover-text"></i>
           </span>
         </div>
         <h5 className="card-title fw-semibold">

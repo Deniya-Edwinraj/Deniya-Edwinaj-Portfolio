@@ -41,18 +41,25 @@ export default function Blog() {
   return (
     <section id="blog" className="text-light py-5 mt-5">
       <div className="container text-center">
-        <p className="text-danger">Visit my blog and keep your feedback</p>
-        <h1 className="display-4 fw-bold">My Blog</h1>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="col-md-12"
+        >
+          <p className="text-danger">Visit my blog and keep your feedback</p>
+          <h1 className="display-4 fw-bold">My Blog</h1>
 
-        {loading ? (
-          <p className="mt-4 text-muted">Blogs are loading...</p>
-        ) : (
-          <div className="mt-5 d-flex flex-wrap gap-4 justify-content-center">
-            {posts.map((card, index) => (
-              <BlogCard key={index} {...card} />
-            ))}
-          </div>
-        )}
+          {loading ? (
+            <p className="mt-4 text-muted">Blogs are loading...</p>
+          ) : (
+            <div className="mt-5 d-flex flex-wrap gap-4 justify-content-center">
+              {posts.map((card, index) => (
+                <BlogCard key={index} {...card} />
+              ))}
+            </div>
+          )}
+        </motion.div>
       </div>
     </section>
   );
