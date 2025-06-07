@@ -181,7 +181,7 @@ export default function About() {
             <h1 className="display-6 fw-bold mb-4">What I'm Doing</h1>
             <div className="row g-4">
               {services.map((service, index) => (
-                <div key={index} className="col-md-6">
+                <div key={index} className="col-md-3">
                   <div className="p-4 shadow-box rounded-4 h-100">
                     <div className="text-danger mb-3">{service.icon}</div>
                     <h5 className="fw-semibold">{service.title}</h5>
