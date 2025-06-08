@@ -1,4 +1,18 @@
-import { FaGithub, FaLinkedinIn, FaMedium } from "react-icons/fa";
+import {
+  FaBalanceScale,
+  FaChartLine,
+  FaGithub,
+  FaGlobe,
+  FaJava,
+  FaLinkedinIn,
+  FaMedium,
+  FaNodeJs,
+  FaPhp,
+  FaProjectDiagram,
+  FaSitemap,
+  FaUserCog,
+  FaUsers,
+} from "react-icons/fa";
 import { Mail, Phone, MapPin } from "lucide-react";
 import experience1 from "../assets/Images/4.png";
 import experience2 from "../assets/Images/5.png";
@@ -16,7 +30,50 @@ import {
   FaRocket,
   FaTools,
 } from "react-icons/fa";
-import { p } from "framer-motion/client";
+
+import {
+  FaJs,
+  FaPython,
+  FaBootstrap,
+  FaReact,
+  FaTrello,
+  FaSlack,
+  FaJira,
+  FaGoogleDrive,
+} from "react-icons/fa";
+import {
+  SiMongodb,
+  SiGoogledocs,
+  SiGooglesheets,
+  SiGoogleclassroom,
+  SiGooglemeet,
+  SiTailwindcss,
+  SiMaterialdesign,
+  SiFigma,
+  SiExpress,
+  SiVite,
+  SiNextdotjs,
+  SiLaravel,
+  SiMysql,
+  SiShopify,
+  SiBitbucket,
+  SiGoogleanalytics,
+  SiGit,
+  SiSemrush,
+  SiCss3,
+  SiOpenproject,
+} from "react-icons/si";
+import { MdCall, MdDesignServices, MdOutlineChecklist } from "react-icons/md";
+import { GiMeditation, GiPublicSpeaker } from "react-icons/gi";
+import {
+  BsPeopleFill,
+  BsPersonCheck,
+  BsChatSquareQuote,
+  BsFillPuzzleFill,
+} from "react-icons/bs";
+import { FaEarListen, FaListCheck } from "react-icons/fa6";
+import { HiOutlineUserGroup } from "react-icons/hi";
+import { TbArrowsShuffle } from "react-icons/tb";
 
 export const services = [
   {
@@ -126,12 +183,12 @@ export const educationData = [
   {
     year: "2023 August – 2024 March",
     title: "Uki Technology School",
-    role: "Full-stack Web Development.",
+    role: "Full-stack Web Development",
     imageSrc: experience1,
   },
   {
     year: "2007 - 2022",
-    title: "Uki Technology School",
+    title: "Chundikuli Girls' College",
     role: "Advanced Level in Pysical Science stream, Secondary Education, Primary Education",
     imageSrc: education1,
   },
@@ -166,5 +223,104 @@ export const projectData = [
     description:
       "An admin dashboard for managing the MASK Ecommerce platform. Admins can manage products, view orders, control inventory, and monitor user activities through a clean and responsive interface.",
     url: "https://mask-admin.vercel.app/",
+  },
+];
+
+export const Tskills = {
+  programming: [
+    { name: "Javascript", icon: <FaJs /> },
+    { name: "Python", icon: <FaPython /> },
+    { name: "React js", icon: <FaReact /> },
+    { name: "MongoDB", icon: <SiMongodb /> },
+    { name: "Node js", icon: <FaNodeJs /> },
+    { name: "Express", icon: <SiExpress /> },
+    { name: "Vite", icon: <SiVite /> },
+    { name: "Next js", icon: <SiNextdotjs /> },
+    { name: "Java", icon: <FaJava /> },
+    { name: "PHP", icon: <FaPhp /> },
+    { name: "Laravel", icon: <SiLaravel /> },
+    { name: "MYSQL", icon: <SiMysql /> },
+    { name: "Shopify", icon: <SiShopify /> },
+    { name: "Git", icon: <SiGit /> },
+    { name: "GitHub", icon: <FaGithub /> },
+    { name: "BitBucket", icon: <SiBitbucket /> },
+    { name: "SEO", icon: <FaGlobe /> },
+    { name: "Data Science", icon: <FaChartLine /> },
+  ],
+  styling: [
+    { name: "Bootstrap", icon: <FaBootstrap /> },
+    { name: "Material UI", icon: <SiMaterialdesign /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+    { name: "Cascading Style Sheets", icon: <SiCss3 /> },
+  ],
+  productivityTools: [
+    { name: "Trello", icon: <FaTrello /> },
+    { name: "Slack", icon: <FaSlack /> },
+    { name: "Jira board", icon: <FaJira /> },
+    { name: "Google Docs", icon: <SiGoogledocs /> },
+    { name: "Google Sheets", icon: <SiGooglesheets /> },
+    { name: "Google Drive", icon: <FaGoogleDrive /> },
+    { name: "Google Classroom", icon: <SiGoogleclassroom /> },
+    { name: "Google Meet", icon: <SiGooglemeet /> },
+    { name: "Zoom", icon: <SiGooglemeet /> },
+    { name: "Mirosoft Teams", icon: <MdCall /> },
+
+    { name: "Wireframing", icon: <MdDesignServices /> },
+    { name: "Canva", icon: <MdDesignServices /> },
+    { name: "Figma", icon: <SiFigma /> },
+  ],
+  projectManagement: [
+    { name: "Agile", icon: <SiOpenproject /> },
+    { name: "Scrum", icon: <FaUserCog /> },
+    { name: "Project Management", icon: <FaProjectDiagram /> },
+  ],
+};
+
+export const Sskills = [
+  { name: "Leadership", icon: <BsPersonCheck /> },
+  { name: "Communication", icon: <BsChatSquareQuote /> },
+  { name: "Teamwork", icon: <BsPeopleFill /> },
+  { name: "Public speech", icon: <GiPublicSpeaker /> },
+  { name: "Adaptation", icon: <BsFillPuzzleFill /> },
+  { name: "Problem Solving", icon: <FaTools /> },
+  { name: "Critical Thinking", icon: <FaShieldAlt /> },
+  { name: "Time Management", icon: <FaRocket /> },
+  { name: "Creativity", icon: <FaLaptopCode /> },
+  { name: "Conflict Resolution", icon: <FaBalanceScale /> },
+  { name: "Decision Making", icon: <FaSitemap /> },
+  { name: "Active Listening", icon: <FaEarListen /> },
+  { name: "Collaboration", icon: <FaUsers /> },
+  { name: "Networking", icon: <HiOutlineUserGroup /> },
+  { name: "Flexibility", icon: <TbArrowsShuffle /> },
+  { name: "Stress Management", icon: <GiMeditation /> },
+  { name: "Self-Motivation", icon: <FaRocket /> },
+  { name: "Conflict Management", icon: <FaShieldAlt /> },
+  { name: "Accountability", icon: <MdOutlineChecklist /> },
+];
+
+export const educationtimelineData = [
+  {
+    title: "Bachelor of Information Technology",
+    job: "University of Colombo School of Computing (2025 – 2027)",
+    description:
+      "BIT is the Bachelor of Information Technology Degree (External) programme introduced by the University of Colombo School of Computing (UCSC),",
+  },
+  {
+    title: "Full-stack Web Development",
+    job: "Uki Technology School (2023 August – 2024 March)",
+    description:
+      "Uki Accelarator Programme Six-month certificate course for full-stack web development.",
+  },
+  {
+    title: "Advanced Level",
+    job: "Chundikuli Girls College (2022)",
+    description:
+      "Very Good Pass in Combine Mathematics, Credit Pass in Chemistry, Ordinary Pass in Physics",
+  },
+  {
+    title: "Ordinary Level",
+    job: "Chundikuli Girls College (2018)",
+    description:
+      "Distinction Pass in English, ICT, History, Very Good Pass in Tamil, Christianity, Mathematics, Commerce and Credit Pass in Art, Science",
   },
 ];
