@@ -1,7 +1,7 @@
 import React from "react";
 import fallbackImage from "../assets/Images/6.png"; // make sure the path is correct
 
-const BlogCard = ({ image, category, time, title }) => {
+const BlogCard = ({ image, category, time, title, link }) => {
   return (
     <div className="card col-md-3 bg-dark text-light border-0 rounded-4 shadow-box p-3">
       <div className="card-img-container overflow-hidden rounded-3">
@@ -23,7 +23,7 @@ const BlogCard = ({ image, category, time, title }) => {
             <i className="bi bi-clock"></i> {time}
           </span>
         </div>
-        <h5 className="card-title fw-semibold">{title}</h5>
+        <a href={link} className="card-title fw-semibold text-decoration-none">{title}</a>
       </div>
     </div>
   );

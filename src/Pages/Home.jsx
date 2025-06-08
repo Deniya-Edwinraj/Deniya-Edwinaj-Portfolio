@@ -110,8 +110,28 @@ export default function Home() {
                   return (
                     <div key={index} className="mb-3">
                       <div className="d-flex align-items-center gap-2">
-                        <Icon size={20} className="text-danger" />
-                        <span className="text-light small">{info.value}</span>
+                        <div className="text-danger">
+                          <Icon size={18} />
+                        </div>{" "}
+                        {/* ✅ Fixed here */}
+                        <a
+                          href={
+                            info.label === "EMAIL"
+                              ? `mailto:${info.value}`
+                              : info.label === "PHONE"
+                              ? `tel:${info.value.replace(/\s+/g, "")}`
+                              : info.label === "LOCATION"
+                              ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                                  info.value
+                                )}`
+                              : "#"
+                          }
+                          className="text-light small text-decoration-none"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {info.value}
+                        </a>
                       </div>
                     </div>
                   );
@@ -176,7 +196,7 @@ export default function Home() {
               </p>
               <div className="d-flex gap-3 justify-content-start align-items-end">
                 <a
-                  href="https://drive.google.com/file/d/1tYqk0qZz6n3y7F9Qm5j2X0C8Yg4n7v7r/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1vhYj_YwD0y5e0ea4Zedmvl3o41X96OgA/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="button text-decoration-none"
@@ -184,9 +204,7 @@ export default function Home() {
                   Download CV
                 </a>
                 <a
-                  href="https://drive.google.com/file/d/1tYqk0qZz6n3y7F9Qm5j2X0C8Yg4n7v7r/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:deniyaedwinraj@gmail.com?subject=Hiring%20Opportunity&body=Hi%2C%20I%27m%20interested%20in%20discussing%20a%20project%20with%20you."
                   className="button text-decoration-none"
                 >
                   Hire Me

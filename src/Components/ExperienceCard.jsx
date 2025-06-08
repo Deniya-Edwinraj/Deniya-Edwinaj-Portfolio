@@ -16,21 +16,27 @@ const ExperienceCard = ({ year, title, role, description, imageSrc }) => {
             src={imageSrc}
             alt="App Screenshot"
             className="img-fluid rounded-3 w-100 zoom-on-hover"
-            style={{ maxWidth: "100%", maxHeight: "200px", backgroundColor: "#000" }}
+            style={{
+              maxWidth: "100%",
+              maxHeight: "200px",
+              backgroundColor: "#000",
+            }}
           />
         </div>
 
         {/* Content in the middle */}
         <div className="col-7 text-start p-3">
-            <span className="text-secondary small">{year}</span>
-            <h2 className="h5 fw-bold">{title}</h2>
-            <p className="h6">{role}</p>
-            <p className="text-secondary">{description}</p>
+          <span className="text-secondary small">{year}</span>
+          <h2 className="h5 fw-bold">{title}</h2>
+          <p className="h6">{role}</p>
+          <p className="text-secondary">{description}</p>
         </div>
 
         {/* Button on the right */}
         <div className="col-2 text-end">
-          <button className="button mt-3 w-100">CONTACT ME</button>
+          <a href="/contact" className="button mt-3 w-100 text-decoration-none">
+            CONTACT ME
+          </a>
         </div>
       </div>
     </motion.div>

@@ -262,7 +262,7 @@ export default function Resume() {
           {activeTab === "Experience" && (
             <div className="row position-relative">
               <h6 className="text-danger fw-bold">2024 - Present</h6>
-              <h2 className="fw-bold mb-4">Experiences</h2>
+              <h2 className="fw-bold mb-4">Experience</h2>
               <div className="row">
                 <div className="col-md-6">
                   <ul className="timeline position-relative my-0 mx-auto py-2 list-unstyled">
