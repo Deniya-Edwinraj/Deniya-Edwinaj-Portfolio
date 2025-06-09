@@ -200,7 +200,7 @@ export default function Resume() {
                 <>
                   <div className="row g-4">
                     <p className="fs-5 text-secondary">
-                      Programming Languages & Libraries
+                      Programming Languages, frameworks & Libraries
                     </p>
                     {Tskills.programming.map((skill, index) => (
                       <div key={index} className="col-md-2">

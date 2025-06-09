@@ -212,7 +212,7 @@ padding: 15px 20px;
 
 /* Tabs */
 .tab-item:hover, .hover-text:hover{
-  color: #dc3545 !important;
+  color: var(--icon-color) !important;
 }
 
 /* Zoom effects */
@@ -225,7 +225,7 @@ padding: 15px 20px;
 }
 
 .hover-text:hover{
-  color: #dc3545 !important;
+  color: var(--color-subtitle) !important;
 }
 
 /* Timeline */
@@ -271,7 +271,7 @@ padding: 15px 20px;
   margin-top: 5px;
   border-radius: 10px;
   background: #212529;
-  border: 3px solid rgb(255,80,80);
+  border: 3px solid var(--icon-color);
   z-index: 10;
 }
 
