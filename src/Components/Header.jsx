@@ -28,7 +28,7 @@ export default function Header({ activeSection, setActiveSection }) {
         {/* Mobile - Centered */}
         <div className="d-flex d-sm-none justify-content-center w-100">
           <div
-            className={`rounded-pill px-4 py-2 ${isScrolled ? "bg-dark" : "bg-secondary bg-opacity-50"}`}
+            className={`rounded-pill text-center px-4 py-2 ${isScrolled ? "bg-dark" : "bg-secondary bg-opacity-50"}`}
           >
             {navItems.map((item) => (
               <Link
