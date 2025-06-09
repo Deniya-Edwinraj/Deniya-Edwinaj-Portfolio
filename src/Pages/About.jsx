@@ -136,7 +136,7 @@ export default function About() {
                 className="bg-danger"
                 style={{ width: "60px", height: "4px" }}
               ></div>
-              <p className="mt-3 text-light">
+              <p className="mt-3 text-light text-justify-custom">
                 I'm Deniya Edwinraj - a Full Stack Developer based in Sri Lanka.
                 With a passion for building clean, efficient, and scalable web
                 applications, I specialize in both frontend and backend
@@ -175,13 +175,13 @@ export default function About() {
           initial={{ opacity: 0, x: 100, y: -50 }} // starts off to the right and above
           whileInView={{ opacity: 1, x: 0, y: 0 }} // animates to its natural position
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="col-md-12"
+          className="col-12"
         >
           <div className="my-5">
             <h1 className="display-6 fw-bold mb-4">What I'm Doing</h1>
-            <div className="row g-4">
+            <div className="row g-4 mx-auto">
               {services.map((service, index) => (
-                <div key={index} className="col-md-3">
+                <div key={index} className="col-12 col-sm-6 col-md-3">
                   <div className="p-4 shadow-box rounded-4 h-100">
                     <div className="text-danger mb-3">{service.icon}</div>
                     <h5 className="fw-semibold">{service.title}</h5>
@@ -245,7 +245,6 @@ export default function About() {
           <div className="shadow-box rounded-4 mt-3 p-4 justify-content-center align-items-center text-center">
             <h1 className="display-4 fw-bold">My Achievements</h1>
 
-            {/* Centered red line */}
             <div
               className="bg-danger mx-auto"
               style={{ width: "60px", height: "4px" }}
@@ -256,7 +255,7 @@ export default function About() {
               Festival
             </h6>
 
-            <p className="fs-6 text-secondary text-start mt-2">
+            <p className="fs-6 text-secondary mt-2 text-justify-custom">
               I took part in the Yaal Geek Challenge, representing my startup
               idea. I participated in the Startup Essential Accelerator Program,
               which was organised by Yaal IT Hub. I proposed that we sell

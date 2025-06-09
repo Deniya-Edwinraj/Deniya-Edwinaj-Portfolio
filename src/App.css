@@ -278,3 +278,7 @@ padding: 15px 20px;
 .direction-r .flag:before {
   left: -8px;
 }
+
+.text-justify-custom {
+  text-align: justify;
+}

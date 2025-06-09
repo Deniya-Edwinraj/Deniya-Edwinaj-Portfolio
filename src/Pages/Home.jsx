@@ -221,8 +221,8 @@ export default function Home() {
             className="col-md-7"
           >
             <div
-              className="rounded-4 p-5 shadow-box"
-              style={{ height: "550px", overflow: "hidden" }}
+              className="rounded-4 p-5 shadow-box overflow-hidden"
+              style={{ height: "550px" }}
             >
               <img
                 src={Profile}

@@ -11,15 +11,15 @@ export default function Project() {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="col-md-12"
+          className="col-12"
         >
-          <p className="text-danger">
-            Visit my projects and keep your feedback
-          </p>
+          <p className="text-danger">Visit my projects and keep your feedback</p>
           <h1 className="display-4 fw-bold">My Projects</h1>
-          <div className="mt-5 d-flex gap-4 justify-content-center">
+          <div className="mt-5 row g-4 justify-content-center">
             {projectData.map((card, index) => (
-              <ProjectCard key={index} {...card} />
+              <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-4">
+                <ProjectCard {...card} />
+              </div>
             ))}
           </div>
         </motion.div>

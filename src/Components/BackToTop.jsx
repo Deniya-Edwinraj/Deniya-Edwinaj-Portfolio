@@ -29,7 +29,7 @@ function BackToTop() {
   }, []);
 
   return (
-    <div className="d-flex align-items-end">
+    <div className="d-none d-md-flex align-items-end">
       <div
         className={`progress-wrap cursor-pointer ${show ? "active-progress" : ""}`}
         onClick={scrollToTop}

@@ -9,13 +9,13 @@ const ProjectCard = ({
   url,
 }) => {
   return (
-    <div className="card col-md-4 bg-dark text-light border-0 rounded-4 shadow-box p-3">
+    <div className="card bg-dark text-light border-0 rounded-4 shadow-box p-3">
       <div className="card-img-container overflow-hidden rounded-3">
         <img
           src={image}
           className="card-img-top w-100 zoom-on-hover"
           alt={title}
-          style={{ height: "250px" }}
+          style={{ height: "250px", objectFit: "cover" }} // Ensures the image maintains aspect ratio
         />
       </div>
       <div className="card-body text-start">

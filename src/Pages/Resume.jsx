@@ -117,7 +117,7 @@ export default function Resume() {
             ></div>
 
             <div className="mt-5">
-              <div className="col-12 d-flex align-items-center p-4 shadow-box text-white rounded-4">
+              <div className="col-12 d-flex flex-wrap justify-content-center p-4 shadow-box text-white rounded-4">
                 {tabs.map((tab) => (
                   <div
                     key={tab}
@@ -190,73 +190,76 @@ export default function Resume() {
 
           {/* Show skills only on that tab */}
           {activeTab === "Professional Skills" && (
-            <>
-              <motion.div
-                initial={{ opacity: 0, x: 100, y: -50 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="col-md-12"
-              >
-                <>
-                  <div className="row g-4">
-                    <p className="fs-5 text-secondary">
-                      Programming Languages, frameworks & Libraries
-                    </p>
-                    {Tskills.programming.map((skill, index) => (
-                      <div key={index} className="col-md-2">
-                        <div className="p-2 shadow-box rounded-4 h-100 text-center">
-                          <div className="fs-3 text-danger">{skill.icon}</div>
-                          <p className="mt-2 small">{skill.name}</p>
-                        </div>
+            <motion.div
+              initial={{ opacity: 0, x: 100, y: -50 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="col-md-12"
+            >
+              <>
+                {/* Programming Languages, frameworks & Libraries */}
+                <div className="row g-4">
+                  <p className="fs-5 text-secondary">
+                    Programming Languages, frameworks & Libraries
+                  </p>
+                  {Tskills.programming.map((skill, index) => (
+                    <div key={index} className="col-6 col-md-2">
+                      <div className="p-2 shadow-box rounded-4 h-100 text-center">
+                        <div className="fs-3 text-danger">{skill.icon}</div>
+                        <p className="mt-2 small">{skill.name}</p>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
+                </div>
 
-                  <div className="row g-4 mt-4">
-                    <p className="fs-5 text-secondary">Styling</p>
-                    {Tskills.styling.map((skill, index) => (
-                      <div key={index} className="col-md-2">
-                        <div className="p-2 shadow-box rounded-4 h-100 text-center">
-                          <div className="fs-3 text-danger">{skill.icon}</div>
-                          <p className="mt-2 small">{skill.name}</p>
-                        </div>
+                {/* Styling */}
+                <div className="row g-4 mt-4">
+                  <p className="fs-5 text-secondary">Styling</p>
+                  {Tskills.styling.map((skill, index) => (
+                    <div key={index} className="col-6 col-md-2">
+                      <div className="p-2 shadow-box rounded-4 h-100 text-center">
+                        <div className="fs-3 text-danger">{skill.icon}</div>
+                        <p className="mt-2 small">{skill.name}</p>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
+                </div>
 
-                  <div className="row g-4 mt-4">
-                    <p className="fs-5 text-secondary">
-                      Tools & Productivity Software
-                    </p>
-                    {Tskills.productivityTools.map((skill, index) => (
-                      <div key={index} className="col-md-2">
-                        <div className="p-2 shadow-box rounded-4 h-100 text-center">
-                          <div className="fs-3 text-danger">{skill.icon}</div>
-                          <p className="mt-2 small">{skill.name}</p>
-                        </div>
+                {/* Tools & Productivity Software */}
+                <div className="row g-4 mt-4">
+                  <p className="fs-5 text-secondary">
+                    Tools & Productivity Software
+                  </p>
+                  {Tskills.productivityTools.map((skill, index) => (
+                    <div key={index} className="col-6 col-md-2">
+                      <div className="p-2 shadow-box rounded-4 h-100 text-center">
+                        <div className="fs-3 text-danger">{skill.icon}</div>
+                        <p className="mt-2 small">{skill.name}</p>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
+                </div>
 
-                  <div className="row g-4 mt-4">
-                    <p className="fs-5 text-secondary">
-                      Project Management Skills
-                    </p>
-                    {Tskills.projectManagement.map((skill, index) => (
-                      <div key={index} className="col-md-2">
-                        <div className="p-2 shadow-box rounded-4 h-100 text-center">
-                          <div className="fs-3 text-danger">{skill.icon}</div>
-                          <p className="mt-2 small">{skill.name}</p>
-                        </div>
+                {/* Project Management Skills */}
+                <div className="row g-4 mt-4">
+                  <p className="fs-5 text-secondary">
+                    Project Management Skills
+                  </p>
+                  {Tskills.projectManagement.map((skill, index) => (
+                    <div key={index} className="col-6 col-md-2">
+                      <div className="p-2 shadow-box rounded-4 h-100 text-center">
+                        <div className="fs-3 text-danger">{skill.icon}</div>
+                        <p className="mt-2 small">{skill.name}</p>
                       </div>
-                    ))}
-                  </div>
-                </>
+                    </div>
+                  ))}
+                </div>
 
+                {/* Interpersonal Skills */}
                 <div className="row g-4 mt-4">
                   <p className="fs-5 text-secondary">Interpersonal Skills</p>
                   {Sskills.map((skill, index) => (
-                    <div key={index} className="col-md-2">
+                    <div key={index} className="col-6 col-md-2">
                       <div className="p-2 shadow-box rounded-4 h-100 text-center">
                         <div className="card-img-container overflow-hidden rounded-3 fs-3">
                           <span className="text-danger">{skill.icon}</span>
@@ -266,8 +269,8 @@ export default function Resume() {
                     </div>
                   ))}
                 </div>
-              </motion.div>
-            </>
+              </>
+            </motion.div>
           )}
 
           {/* Show experience only on that tab */}
