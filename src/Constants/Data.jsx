@@ -203,6 +203,7 @@ export const projectData = [
     description:
       "An AI-powered chatbot that interacts with users intelligently using the Gemini API. Ideal for customer support or education platforms, this chatbot offers smart responses, email integration, and conversation logging.",
     url: "https://mrbot-frontend.vercel.app/",
+    githubUrl: "https://github.com/Deniya-Edwinraj/Mr.Bot-Frontend",
   },
   {
     image: project1,
@@ -213,6 +214,7 @@ export const projectData = [
     description:
       "A fully functional e-commerce platform where users can browse, search, and purchase products. Features include authentication, cart management, image uploads, and order handling with admin approval.",
     url: "https://frontend-mask.vercel.app/",
+    githubUrl: "https://github.com/Deniya-Edwinraj/frontend-MASK",
   },
   {
     image: project2,
@@ -223,6 +225,7 @@ export const projectData = [
     description:
       "An admin dashboard for managing the MASK Ecommerce platform. Admins can manage products, view orders, control inventory, and monitor user activities through a clean and responsive interface.",
     url: "https://mask-admin.vercel.app/",
+    githubUrl: "https://github.com/Deniya-Edwinraj/MASK-Admin",
   },
 ];
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 
 const navItems = ["Home", "About", "Resume", "Projects", "Blog", "Contact"];
 
@@ -21,21 +21,27 @@ export default function Header({ activeSection, setActiveSection }) {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`navbar fixed-top ${isScrolled ? "bg-dark shadow-lg" : "bg-transparent"} transition`}
+      className={`navbar fixed-top ${
+        isScrolled ? "bg-dark shadow-lg" : "bg-transparent"
+      } transition`}
       style={{ backdropFilter: isScrolled ? "blur(10px)" : "none" }}
     >
       <div className="container py-2">
         {/* Mobile - Centered */}
         <div className="d-flex d-sm-none justify-content-center w-100">
           <div
-            className={`rounded-pill text-center px-4 py-2 ${isScrolled ? "bg-dark" : "bg-secondary bg-opacity-50"}`}
+            className={`rounded-pill text-center px-4 py-2 ${
+              isScrolled ? "bg-dark" : "bg-dark shadow-box"
+            }`}
           >
             {navItems.map((item) => (
               <Link
                 key={item}
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`} // Check for "Home"
                 className={`btn btn-sm border-0 text-light mx-1 ${
-                  activeSection === item.toLowerCase() ? "text-danger" : "text-secondary"
+                  activeSection === item.toLowerCase()
+                    ? "text-danger"
+                    : "text-secondary"
                 }`}
                 onClick={() => setActiveSection(item.toLowerCase())} // Update active section
               >
@@ -49,16 +55,20 @@ export default function Header({ activeSection, setActiveSection }) {
         <div className="d-none d-sm-flex w-100">
           <div className="ms-auto">
             <div
-              className={`rounded-pill px-4 py-2 ${isScrolled ? "bg-dark" : "bg-secondary bg-opacity-50"}`}
+              className={`rounded-pill px-4 py-2 ${
+                isScrolled ? "bg-dark" : "bg-dark shadow-box"
+              }`}
             >
               {navItems.map((item) => (
                 <Link
                   key={item}
-                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`} // Check for "Home"
-                  className={`btn btn-sm text-light mx-1 ${
-                    activeSection === item.toLowerCase() ? "text-warning" : "text-secondary"
+                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  className={`btn btn-sm border-0 mx-1 ${
+                    activeSection === item.toLowerCase()
+                      ? "text-danger fw-bold"
+                      : "text-light"
                   }`}
-                  onClick={() => setActiveSection(item.toLowerCase())} // Update active section
+                  onClick={() => setActiveSection(item.toLowerCase())}
                 >
                   {item}
                 </Link>

@@ -117,18 +117,57 @@ export default function Resume() {
             ></div>
 
             <div className="mt-5">
-              <div className="col-12 d-flex flex-wrap justify-content-center p-4 shadow-box text-white rounded-4">
-                {tabs.map((tab) => (
+              <div className="col-12 p-4 shadow-box text-white rounded-4">
+                {/* Desktop View - Flex Wrap */}
+                <div className="d-none d-md-flex flex-wrap justify-content-center">
+                  {tabs.map((tab) => (
+                    <div
+                      key={tab}
+                      onClick={() => setActiveTab(tab)}
+                      className={`px-4 py-1 rounded-4 text-center fw-semibold tab-item 
+          ${activeTab === tab ? "text-danger" : "text-light"}`}
+                      style={{ cursor: "pointer", flex: 1 }}
+                    >
+                      {tab}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Mobile View - Horizontal Scroll */}
+                <div
+                  className="d-flex d-md-none overflow-hidden"
+                  style={{
+                    width: "100%",
+                    WebkitOverflowScrolling:
+                      "touch" /* For smooth scrolling on iOS */,
+                  }}
+                >
                   <div
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`px-4 py-1 rounded-4 text-center fw-semibold tab-item 
-                      ${activeTab === tab ? "text-danger" : "text-light"}`}
-                    style={{ cursor: "pointer", flex: 1 }}
+                    className="d-flex"
+                    style={{
+                      overflowX: "auto",
+                      scrollbarWidth: "none" /* Firefox */,
+                      msOverflowStyle: "none" /* IE/Edge */,
+                      paddingBottom: "10px" /* Space for invisible scroll */,
+                    }}
                   >
-                    {tab}
+                    {tabs.map((tab) => (
+                      <div
+                        key={tab}
+                        onClick={() => setActiveTab(tab)}
+                        className={`px-4 py-1 rounded-4 text-center fw-semibold tab-item 
+            ${activeTab === tab ? "text-danger" : "text-light"}`}
+                        style={{
+                          cursor: "pointer",
+                          flex: "0 0 auto" /* Prevent shrinking/growing */,
+                          whiteSpace: "nowrap" /* Keep text in one line */,
+                        }}
+                      >
+                        {tab}
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>

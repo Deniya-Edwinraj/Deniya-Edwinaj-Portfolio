@@ -7,6 +7,7 @@ const ProjectCard = ({
   description,
   title,
   url,
+  githubUrl,
 }) => {
   return (
     <div className="card bg-dark text-light border-0 rounded-4 shadow-box p-3">
@@ -15,14 +16,22 @@ const ProjectCard = ({
           src={image}
           className="card-img-top w-100 zoom-on-hover"
           alt={title}
-          style={{ height: "250px", objectFit: "cover" }} // Ensures the image maintains aspect ratio
+          style={{ height: "250px", objectFit: "cover" }}
         />
       </div>
       <div className="card-body text-start">
         <div className="d-flex justify-content-between align-items-center mb-2 small">
           <span className="text-danger fw-bold">{category.toUpperCase()}</span>
           <span className="text-secondary d-flex gap-2">
-            <i className="bi bi-github hover-text"></i>
+            <a 
+              href={githubUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-secondary hover-text"
+              style={{ cursor: "pointer" }}
+            >
+              <i className="bi bi-github"></i>
+            </a>
             <i className="bi bi-heart-fill hover-text"></i>
           </span>
         </div>

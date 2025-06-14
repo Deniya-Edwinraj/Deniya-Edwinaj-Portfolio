@@ -15,10 +15,10 @@ export default function Project() {
         >
           <p className="text-danger">Visit my projects and keep your feedback</p>
           <h1 className="display-4 fw-bold">My Projects</h1>
-          <div className="mt-5 row g-4 justify-content-center">
+          <div className="mt-5 row g-4">
             {projectData.map((card, index) => (
-              <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-4">
-                <ProjectCard {...card} />
+              <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-4 d-flex">
+                <ProjectCard {...card} className="h-100" />
               </div>
             ))}
           </div>
