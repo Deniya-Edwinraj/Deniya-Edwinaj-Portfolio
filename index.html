@@ -18,19 +18,14 @@
     <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdjFWErAAAAAD-cOGhRzfKcczp5aGmriPpVsdQd"></script>
 
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-PWQBXHTT9D"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-PWQBXHTT9D");
-    </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PMQBXHTT90"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}  // ✅ Correct function name
+  gtag('js', new Date());                     // ✅ Now works
+  gtag('config', 'G-PMQBXHTT90');             // ✅ Proper initialization
+</script>
   </head>
   <body>
     <div id="root"></div>
