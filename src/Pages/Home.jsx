@@ -11,7 +11,7 @@ import {
   User,
 } from "lucide-react";
 import { FaGithub, FaLinkedinIn, FaMedium } from "react-icons/fa";
-import Profile from "../assets/Images/2.jpg";
+import Profile from "../assets/Images/1.png";
 
 export default function Home() {
   useEffect(() => {
