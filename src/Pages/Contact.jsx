@@ -384,7 +384,7 @@ export default function Contact() {
                 {/* reCAPTCHA Row */}
                 <div className="mb-3">
                   <ReCAPTCHA
-                    sitekey="6LcVdPsqAAAAAFeo84JcbbftJHjL6T0UKf0KCAjQ"
+                    sitekey="6LdjFWErAAAAAD-cOGhRzfKcczp5aGmriPpVsdQd"
                     onChange={handleRecaptcha}
                     theme="dark"
                   />
