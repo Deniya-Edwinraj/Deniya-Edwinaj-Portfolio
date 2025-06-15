@@ -87,7 +87,6 @@ export default function Home() {
   return (
     <section id="home" className="text-light py-5 mt-5">
       <div className="container">
-        <div className="row g-5">
           {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -113,7 +112,6 @@ export default function Home() {
                         <div className="text-danger">
                           <Icon size={18} />
                         </div>{" "}
-                        {/* ✅ Fixed here */}
                         <a
                           href={
                             info.label === "EMAIL"
@@ -233,7 +231,6 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </div>
     </section>
   );
 }
