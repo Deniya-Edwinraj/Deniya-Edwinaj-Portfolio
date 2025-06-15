@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import ReCAPTCHA from "react-google-recaptcha";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
@@ -69,6 +69,7 @@ export default function Contact() {
   ];
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [submitMessage, setSubmitMessage] = useState({ type: "", text: "" });
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -86,12 +87,12 @@ export default function Contact() {
     message: "",
   });
 
-  const [recaptchaVerified, setRecaptchaVerified] = useState(false); // To check if reCAPTCHA is verified
-
   const regex = {
     fullName: /^[a-zA-Z\s]{3,}$/, // At least 3 characters, only letters and spaces
     email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, // Email pattern
-    phone: /^[0-9]{10}$/, // Valid 10-digit phone number
+    phone: /^\d{10}$/, // Exactly 10 digits
+    subject: /^.{10,}$/, // At least 10 characters
+    message: /^.{10,}$/, // At least 10 characters
   };
 
   const handleChange = (e) => {
@@ -101,32 +102,100 @@ export default function Contact() {
       [name]: value,
     });
 
-    if (regex[name] && !regex[name].test(value)) {
-      setErrors({
-        ...errors,
-        [name]: `${name.charAt(0).toUpperCase() + name.slice(1)} is invalid.`,
-      });
-    } else {
-      setErrors({
-        ...errors,
-        [name]: "",
-      });
+    // Custom error messages for each field
+    let errorMessage = "";
+    if (!value.trim()) {
+      errorMessage = `${
+        name.charAt(0).toUpperCase() + name.slice(1)
+      } is required.`;
+    } else if (regex[name] && !regex[name].test(value)) {
+      if (name === "phone") {
+        errorMessage = "Phone number must be exactly 10 digits.";
+      } else if (name === "subject" || name === "message") {
+        errorMessage = `${
+          name.charAt(0).toUpperCase() + name.slice(1)
+        } must be at least 10 characters.`;
+      } else {
+        errorMessage = `${
+          name.charAt(0).toUpperCase() + name.slice(1)
+        } is invalid.`;
+      }
     }
-  };
 
-  const handleRecaptcha = (value) => {
-    if (value) {
-      setRecaptchaVerified(true); // Set reCAPTCHA as verified
-    }
+    setErrors({
+      ...errors,
+      [name]: errorMessage,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (recaptchaVerified) {
-      // Form submit logic here (e.g., API call or form handling)
-      alert("Form submitted successfully!");
-    } else {
-      alert("Please verify that you are human!");
+
+    // Validate all fields before submission
+    let formIsValid = true;
+    const newErrors = {};
+
+    Object.keys(formData).forEach((key) => {
+      if (!formData[key].trim()) {
+        newErrors[key] = `${
+          key.charAt(0).toUpperCase() + key.slice(1)
+        } is required.`;
+        formIsValid = false;
+      } else if (regex[key] && !regex[key].test(formData[key])) {
+        if (key === "phone") {
+          newErrors[key] = "Phone number must be exactly 10 digits.";
+        } else if (key === "subject" || key === "message") {
+          newErrors[key] = `${
+            key.charAt(0).toUpperCase() + key.slice(1)
+          } must be at least 10 characters.`;
+        } else {
+          newErrors[key] = `${
+            key.charAt(0).toUpperCase() + key.slice(1)
+          } is invalid.`;
+        }
+        formIsValid = false;
+      }
+    });
+
+    setErrors(newErrors);
+
+    if (formIsValid) {
+      // Initialize EmailJS with your User ID
+      emailjs.init("1JhpDFWb4tZlLmkCh"); // Replace with your actual User ID
+
+      // Prepare the email parameters
+      const templateParams = {
+        from_name: formData.fullName,
+        from_email: formData.email,
+        phone_number: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+        reply_to: formData.email,
+      };
+
+      // Send the email
+      emailjs
+        .send(
+          "service_atcmru7", // Replace with your EmailJS service ID
+          "template_rxvne43", // Replace with your EmailJS template ID
+          templateParams
+        )
+        .then(
+          (response) => {
+            // console.log("SUCCESS!", response.status, response.text);
+            setSubmitMessage({
+              type: "success",
+              text: "Your message has been sent successfully!",
+            });
+          },
+          (error) => {
+            console.log("FAILED...", error);
+            setSubmitMessage({
+              type: "error",
+              text: "Failed to send message. Please try again later.",
+            });
+          }
+        );
     }
   };
 
@@ -381,26 +450,21 @@ export default function Contact() {
                   )}
                 </div>
 
-                {/* reCAPTCHA Row */}
-                <div className="mb-3">
-                  <ReCAPTCHA
-                    sitekey="6LdjFWErAAAAAD-cOGhRzfKcczp5aGmriPpVsdQd"
-                    onChange={handleRecaptcha}
-                    theme="dark"
-                  />
-                </div>
-
                 {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="button fw-bold"
-                  disabled={
-                    Object.values(errors).some((err) => err !== "") ||
-                    !recaptchaVerified
-                  }
-                >
+                <button type="submit" className="button fw-bold">
                   Submit
                 </button>
+                {submitMessage.text && (
+                  <div
+                    className={`mt-3 fw-semibold ${
+                      submitMessage.type === "success"
+                        ? "text-success"
+                        : "text-danger"
+                    }`}
+                  >
+                    {submitMessage.text}
+                  </div>
+                )}
               </form>
             </div>
           </motion.div>
